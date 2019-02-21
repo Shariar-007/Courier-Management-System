@@ -1,11 +1,32 @@
 
+<?php
+  $mpty_error=FALSE;
+ if (isset($_GET["FF"]) && isset($_GET["delete"])) {
+    $mpty_error = TRUE;
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "courier";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
+$sql = "SELECT ItemOfShipping FROM  shippingiteam";
+$result = mysqli_query($conn, $sql);
+
+?>
 
 
 
 <!DOCTYPE html>
 <html lang="en">
     <head>  
-        <title>Logein page</title>  
+        <title>Add Data</title>  
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,78 +81,82 @@
         </style>
     </head>      
     <body>
-             <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 70px;">
-              <ul class="nav navbar-nav">
-                <li class="active" style="margin-left:45px;"><a href="http://localhost:1234/Courier/Admin/AdminHome.php"><i class="fa fa-home"> </i>Home</a></li>
-                <li class="active" style="margin-left:45px;"><a href="http://localhost:1234/Courier/Admin/changePassword.php">Change Password</a></li>
-               
-				<li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover" >
-                            <button class="w3-button w3-black">Data Master</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/SetupCost.php" class="w3-bar-item w3-button">Setup Costs</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/TAX.php" class="w3-bar-item w3-button">TAX</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Insurance.php" class="w3-bar-item w3-button">Insurance</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Packing.php" class="w3-bar-item w3-button">Packing</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Delevery%20Status.php" class="w3-bar-item w3-button">Delivery Status</a>
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 70px;">
+                    <ul class="nav navbar-nav">
+                        <li class="active" style="margin-left:45px;"><a href="../AdminHome.php"><i class="fa fa-home"> </i>Home</a></li>
+                        <li class="active" style="margin-left:45px;"><a href="../changePassword.php">Change Password</a></li>
+
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover" >
+                                    <button class="w3-button w3-black">Data Master</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                                        <a href="../DataMaster/SetupCost.php" class="w3-bar-item w3-button">Setup Costs</a>
+                                        <a href="../DataMaster/TAX.php" class="w3-bar-item w3-button">TAX</a>
+                                        <a href="../DataMaster/Insurance.php" class="w3-bar-item w3-button">Insurance</a>
+                                        <a href="../DataMaster/Packing.php" class="w3-bar-item w3-button">Packing</a>
+                                        <a href="../DataMaster/Delevery Status.php" class="w3-bar-item w3-button">Delivery Status</a>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data Member</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">                             
-                              <a href="http://localhost:1234/Courier/Admin/DataMember/DataBranch.php" class="w3-bar-item w3-button">Data Branch</a>
-                                               
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data Member</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">                             
+                                        <a href="../DataMember/DataBranch.php" class="w3-bar-item w3-button">Data Branch</a>
+
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                 <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data transaction</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">                             
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/DataTransaction.php" class="w3-bar-item w3-button">Data Transaction</a>
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/UpdateInvoice.php" class="w3-bar-item w3-button">Update Invoice</a>                  
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data transaction</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">                             
+                                        <a href="../Data Transaction/DataTransaction.php" class="w3-bar-item w3-button">Data Transaction</a>
+                                        <a href="../Data Transaction/UpdateInvoice.php" class="w3-bar-item w3-button">Update Invoice</a>                  
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                 <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data Report</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">
-                            
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Report/DataReport.php" class="w3-bar-item w3-button">Report Transaction</a>
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Report/TransactionGraph.php" class="w3-bar-item w3-button">Transaction Graph</a>                  
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data Report</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">
+
+                                        <a href="../Data Report/DataReport.php" class="w3-bar-item w3-button">Report Transaction</a>
+                                        <a href="../Data Report/examples/01-overview/TransactionGraph.php" class="w3-bar-item w3-button">Transaction Graph</a>                  
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                <li class="active"><a href="http://localhost:1234/Courier/courier/Home.php">Logout</a></li>
-              </ul>
+                        </li>
+                        <li class="active"><a href="../../courier/Home.php">Logout</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </nav> 
+        </nav>
         <div class=" container" style="margin-top: 40px;">
             <div class=" row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-primary">
                         <div class="panel-heading">List Data Transaction</div>
                         <br>
-                      <p style="margin-left:10px;"> <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/DataTransaction.php">List Data</a> | <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/AddData.php">Add Data</a> | <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/SearchData.php">Search Data</a></p>
+                        <p style="margin-left:10px;"> <a href="DataTransaction.php">List Data</a> | <a href="AddData.php">Add Data</a> | <a href="SearchData.php">Search Data</a></p>
                          <hr>
-						<div class="table-responsive">
-						<label style="margin-left: 20px;margin-bottom: 20px;font-size:18px;" >A. Data Submissions</label>
+		<div class="table-responsive">
+		<label style="margin-left: 20px;margin-bottom: 20px;font-size:18px;" >A. Data Submissions</label>
 						
-					<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" style="margin-left: 20px;">						 
+                <form action="AddData_to_Database.php" method="post" target="_blank;"style="margin-left: 20px;">						 
+                        
+                        <label class="underlabel" style="margin-right: 200px; "> Date:</label>                    
+                        <input type="date" id="Date" name="Date" style="width:175px;height:25px;">
+                        <br><br>
                         <label class="underlabel" style="margin-right: 180px;" > Origins:</label>
                         <input type="text" id="org" name="Origins" placeholder="Enter Origin" >
                         <br>
@@ -155,7 +180,8 @@
                         <label class="underlabel" style=" margin-right: 123px;"> Delivery options:</label>
                         <dev style="font-size: 14px;">
                             <select required name="Delevery" style="color: lightslategray;width: 120px; height: 35px;">
-                                <option id="del-1" value="Sea or Land">Sea or Land</option>
+                                <option id="del-1" value="Sea">Sea</option>
+                                <option id="del-3" value="Land">Land</option>
                                 <option id="del-2" value="Air">Air</option>
                             </select>
                         </dev>   
@@ -163,7 +189,7 @@
                         <br><br>
                         <label class="underlabel" style=" margin-right: 178px;"> Packing:</label>
                         <dev style=" font-size: 14px;">
-                            <select required name="Delevery" style="color: lightslategray;width: 60px; height: 35px;">
+                            <select required name="packing" style="color: lightslategray;width: 60px; height: 35px;">
                                 <option id="yes" value="Yes">Yes</option>
                                 <option id="no" value="No">No</option>
                             </select>
@@ -172,42 +198,55 @@
                         <br><br>
                         <label class="underlabel" style=" margin-right: 123px;"> Option Shipping:</label>
                         <dev style="font-size: 14px;">
-                            <select required name="Delevery" style="color: lightslategray;width: 170px; height: 35px;">
+                            <select name="shipping" style="color: lightslategray;width: 170px; height: 35px;">
                                 <option value="">--Option Shipping--</option>
-                                <option id="reg" value="Regular">Regular</option>
-                                <option id="exp" value="Express">Express</option>
+                                <?php
+                                if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    $value=$row["ItemOfShipping"];
+                                
+                                ?>
+                                <option id="reg" value="<?php echo $value ?>"><?php echo $value ?></option>
+                                <!--<option id="exp" value="Express">Express</option> -->
+                           
+ <?php  }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?> 
+                                
                             </select>
                         </dev>   
 
                         <br><br>
                         <label class="underlabel" style="margin-right: 140px;">Distance (km):</label>
-                        <input id="dist" name="Distance" class="input" type="text" >
-                        <br><br>   
-						<label class="underlabel" style="margin-right: 113px;">Contents of items:</label>
-                        <input id="con" name="content" class="input" type="text" >
-                        <br> 
+                        <input id="dist" name="Distance" class="input" type="text">
+                        <br><br><br>
+                  
                         <label style="margin-bottom: 20px;padding-top:30px;font-size:18px;" >B. Data Sender</label>
 						<br>
 						<br>
-					    <label style="margin-right: 6px;">Name of the sender:</label><input type="text" name="name" style="margin-left:100px; width:300px; ">
+                                                <label style="margin-right: 6px;">Name of the sender:</label><input type="text" name="Sender" placeholder="sender name" style="margin-left:100px; width:300px; ">
 						 <br><br>
-						<label style="margin-right: 94px;">Address:</label> <input type="text" name="code" style="margin-left:80px; width:300px;">								  
-						  <br><br>
-						<label style="margin-right: 94px;">Phone:</label><input type="text" name="name" style="margin-left:100px; width:300px; ">
+						<label style="margin-right: 94px;">Phone:</label><input type="text" name="SPhone" placeholder="sender phone" style="margin-left:100px; width:300px; ">
 						 <br><br>
-						<label style="margin-right: 94px;">Email:</label> <input type="text" name="name" style="margin-left:100px; width:300px;">						
+                                                 <label style="margin-right: 94px;">Email:</label> <input type="email" name="SEmail" placeholder="sender email" style="margin-left:100px; width:300px;">						
 						<br> 
                         <label style="margin-bottom: 20px;padding-top:30px;font-size:18px;" >C. Data Receiver</label>
 						<br>
 						<br>
-					    <label style="margin-right: 24px;">Recipients name:</label><input type="text" name="name" style="margin-left:100px; width:300px; ">
+					    <label style="margin-right: 24px;">Recipients name:</label><input type="text" name="Receiver" placeholder="Recipients name" style="margin-left:100px; width:300px; ">
 						 <br><br>
-						<label style="margin-right: 94px;">Address:</label> <input type="text" name="code" style="margin-left:80px; width:300px;">								  
+						<label style="margin-right: 110px;">Phone:</label> <input type="text" name="RPhone" placeholder="Recipients phone" style="margin-left:80px; width:300px;">								  
 						  <br><br>
-						<label style="margin-right: 94px;">Phone:</label><input type="text" name="name" style="margin-left:100px; width:300px; ">
-						 <br>						
+                                                  <label style="margin-right: 100px;">Email:</label><input type="email" name="REmail" placeholder="Recipients email" style="margin-left:100px; width:300px; ">
+						 <br>			
+                                                 <input type="submit" name="delete" value="Proses" style="background-color: #066ECD;width:60px;height:40px;margin-left:260px;">
 					</form>
-                         <input type="submit" name="delete" value="Proses" style="width:60px;height:40px;margin-left:260px;">
+                         
 						 <br><br>							                                                    							
                        
 					   </div>
@@ -219,6 +258,83 @@
         </div>      
         <h4 class="text-center" style="color: blue">Copyright 2017 © Courier Management System</h4>
     </div><!-- container-->
+
+
+<script>
+
+            var autocomplete, autocomplete1;
+
+            function initAutocomplete() {
+                autocomplete = new google.maps.places.Autocomplete(
+                        (document.getElementById('org')),
+                        {
+                            types: ['geocode']
+                        });
+                autocomplete1 = new google.maps.places.Autocomplete(
+                        (document.getElementById('dest')),
+                        {
+                            types: ['geocode']
+                        });
+
+                autocomplete.addListener('place_changed', fillInAddress);
+                autocomplete1.addListener('place_changed', fillInAddress);
+            }
+
+            function fillInAddress() {
+                autocomplete.getPlace();
+                //console.log("yo!!!");
+            }
+
+
+        </script>
+
+        <!--Distance Calculation-->
+        <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3BLb3uHA27nebpSeadReHXulPbyewd_4&libraries=places&callback=initAutocomplete">
+        </script>
+        <script>
+            $(document).ready(function () {
+
+                function calcD() {
+                    var org = $("#org").val();
+                    var dest = $("#dest").val();
+
+                    //console.log(org+" "+dest);
+
+                    var directionsService = new google.maps.DirectionsService();
+
+                    var request = {
+                        origin: org, // a city, full address, landmark etc
+                        destination: dest,
+                        travelMode: google.maps.DirectionsTravelMode.DRIVING
+                    };
+
+                    directionsService.route(request, function (response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            console.log(response.routes[0].legs[0].distance.value + " metres"); // the distance in metres
+                            $("#dist").val(response.routes[0].legs[0].distance.value / 1000);
+                        } else {
+                            //oops, there's no route between these two locations
+                            // every time this happens, a kitten dies
+                            // so please, ensure your address is formatted properly
+                        }
+                    });
+
+                }
+
+                $("#org").change(function () {
+                    calcD();
+                });
+                $("#dest").change(function () {
+                    calcD();
+                });
+
+            });
+        </script>
+
+if ($empty_error) {
+    echo "<script>alert('Every input field must not be empty');</script>";
+}
+
 </body>
 </html>
 

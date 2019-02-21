@@ -1,0 +1,45 @@
+
+drop table If Exists Courier_Detail ;
+drop table If Exists User_Detail;
+drop table If Exists users;
+
+CREATE TABLE users(
+	id int AUTO_INCREMENT primary key,
+    name varchar(40) not null,
+    Password varchar(21) not null
+);
+Create Table User_Detail(
+	 Cid   Int AUTO_INCREMENT, 
+	TrakId	Int	Not Null,
+	SenderName		Varchar(40)	Not Null,
+	ReceiverName	Varchar(40) NOT NULL,
+    PRIMARY KEY (Cid,TrakId)
+);
+
+Create Table Courier_Detail(
+    Did  int AUTO_INCREMENT,
+	TrakId 	Int Not Null,
+	SourceOrigin 		VarChar(255) 	Not Null,
+	SourceDestination	VarChar(255)    NOT NULL,
+	Weight 	Int NOT NULL,
+	DeleveryOption 	VarChar(20),
+	Packing 		VarChar(20),
+	ShippingOption 	VarChar(20),	
+	Date 		DATE,
+     PRIMARY KEY(Did,TrakId)
+);
+
+Create Table Courier_info( 
+	 TAX   float	Not Null,
+	 Insurance	float Not Null,
+	 Packing float NOT NULL   
+);
+
+Create Table Costs(
+	id  Int AUTO_INCREMENT PRIMARY KEY, 
+	Regular	Int	Not Null,
+	Express	int	Not Null,
+    Air	Int	Not Null,
+	Land int Not Null,
+    Water int Not Null    
+);

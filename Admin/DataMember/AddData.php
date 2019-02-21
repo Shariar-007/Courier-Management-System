@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>  
-        <title>Logein page</title>  
+        <title>Add Data</title>  
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,65 +60,65 @@
         </style>
     </head>      
     <body>
-           <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 70px;">
-              <ul class="nav navbar-nav">
-                <li class="active" style="margin-left:45px;"><a href="http://localhost:1234/Courier/Admin/AdminHome.php"><i class="fa fa-home"> </i>Home</a></li>
-                <li class="active" style="margin-left:45px;"><a href="http://localhost:1234/Courier/Admin/changePassword.php">Change Password</a></li>
-               
-				<li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover" >
-                            <button class="w3-button w3-black">Data Master</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/SetupCost.php" class="w3-bar-item w3-button">Setup Costs</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/TAX.php" class="w3-bar-item w3-button">TAX</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Insurance.php" class="w3-bar-item w3-button">Insurance</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Packing.php" class="w3-bar-item w3-button">Packing</a>
-                              <a href="http://localhost:1234/Courier/Admin/DataMaster/Delevery%20Status.php" class="w3-bar-item w3-button">Delivery Status</a>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 70px;">
+                    <ul class="nav navbar-nav">
+                        <li class="active" style="margin-left:45px;"><a href="../AdminHome.php"><i class="fa fa-home"> </i>Home</a></li>
+                        <li class="active" style="margin-left:45px;"><a href="../changePassword.php">Change Password</a></li>
+
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover" >
+                                    <button class="w3-button w3-black">Data Master</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">
+                                        <a href="../DataMaster/SetupCost.php" class="w3-bar-item w3-button">Setup Costs</a>
+                                        <a href="../DataMaster/TAX.php" class="w3-bar-item w3-button">TAX</a>
+                                        <a href="../DataMaster/Insurance.php" class="w3-bar-item w3-button">Insurance</a>
+                                        <a href="../DataMaster/Packing.php" class="w3-bar-item w3-button">Packing</a>
+                                        <a href="../DataMaster/Delevery Status.php" class="w3-bar-item w3-button">Delivery Status</a>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data Member</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">                             
-                              <a href="http://localhost:1234/Courier/Admin/DataMember/DataBranch.php" class="w3-bar-item w3-button">Data Branch</a>
-                                               
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data Member</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">                             
+                                        <a href="../DataMember/DataBranch.php" class="w3-bar-item w3-button">Data Branch</a>
+
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                 <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data transaction</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">                             
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/DataTransaction.php" class="w3-bar-item w3-button">Data Transaction</a>
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Transaction/UpdateInvoice.php" class="w3-bar-item w3-button">Update Invoice</a>                  
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data transaction</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">                             
+                                        <a href="../Data Transaction/DataTransaction.php" class="w3-bar-item w3-button">Data Transaction</a>
+                                        <a href="../Data Transaction/UpdateInvoice.php" class="w3-bar-item w3-button">Update Invoice</a>                  
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                 <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
-                          <div class="w3-dropdown-hover">
-                            <button class="w3-button w3-black">Data Report</button>
-                            <div class="w3-dropdown-content w3-bar-block w3-border">
-                            
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Report/DataReport.php" class="w3-bar-item w3-button">Report Transaction</a>
-                              <a href="http://localhost:1234/Courier/Admin/Data%20Report/TransactionGraph.php" class="w3-bar-item w3-button">Transaction Graph</a>                  
+                        </li>
+                        <li>
+                            <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                                <div class="w3-dropdown-hover">
+                                    <button class="w3-button w3-black">Data Report</button>
+                                    <div class="w3-dropdown-content w3-bar-block w3-border">
+
+                                        <a href="../Data Report/DataReport.php" class="w3-bar-item w3-button">Report Transaction</a>
+                                        <a href="../Data Report/examples/01-overview/TransactionGraph.php" class="w3-bar-item w3-button">Transaction Graph</a>                  
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                </li>
-                <li class="active"><a href="http://localhost:1234/Courier/courier/Home.php">Logout</a></li>
-              </ul>
+                        </li>
+                        <li class="active"><a href="../../courier/Home.php">Logout</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
         <div class=" container" style="margin-top: 40px;">
             <div class=" row">
@@ -126,22 +126,23 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">Data Branch</div>
                         <br>
-                        <p style="margin-left:20px;"><a href="http://localhost:1234/Courier/Admin/DataMember/DataBranch.php">List Data</a> | <a href="http://localhost:1234/Courier/Admin/DataMember/AddData.php">Add Data</a> | <a href="http://localhost:1234/Courier/Admin/DataMember/SearchData.php">Search Data</a></p>
+                        <p style="margin-left:20px;"><a href="DataBranch.php">List Data</a> | <a href="AddData.php">Add Data</a> | <a href="SearchData.php">Search Data</a></p>
                         <hr
-						<div class="table-responsive">          
-                              <form action="/action_page.php">
-								 <label style="margin-left:20px;">Code:</label><input type="text" name="code" value="" readonly="true" style="margin-left:100px; width:200px; height:40px;">								  
-								  <br><br>
-								 <label style="margin-left:20px;">Name:</label><input type="text" name="name" style="margin-left:100px; width:300px; height:40px;">
-								  <br><br>
-								 <label style="margin-left:20px;">Address:</label> <input type="text" name="code" style="margin-left:80px; width:300px; height:40px;">								  
-								  <br><br>
-								 <label style="margin-left:20px;">Phone:</label><input type="text" name="name" style="margin-left:100px; width:300px; height:40px;">
-								  <br><br>
-								 <label style="margin-left:20px;">Email:</label> <input type="text" name="name" style="margin-left:100px; width:300px; height:40px;">
-								</form><br>                          
-							<input type="submit" name="delete" value="Add it" style="width:60px;height:40px;margin-left:200px;">
-							<br><br>
+                          <div class="table-responsive">          
+                              <form action="CompleteAddData.php" method="post">
+                                <label style="margin-left:20px;">Password:</label><input type="password" name="password" style="margin-left:70px; width:200px; height:40px;border: 2px solid skyblue;">								  
+                                <br><br>
+                                <label style="margin-left:20px;">Name:</label><input type="text" name="name" style="margin-left:98px; width:300px; height:40px;border: 2px solid skyblue;">
+                                <br><br>
+                                <label style="margin-left:20px;">Address:</label> <input type="text" name="Address" style="margin-left:76px; width:300px; height:40px;border: 2px solid skyblue;">								  
+                                <br><br>
+                                <label style="margin-left:20px;">Phone:</label><input type="text" name="Phone" style="margin-left:95px; width:300px; height:40px;border: 2px solid skyblue;">
+                                <br><br>
+                                <label style="margin-left:20px;">Email:</label> <input type="text" name="Email" style="margin-left:95px; width:300px; height:40px;border: 2px solid skyblue;">
+                                <br><br>                   
+                                <input type="submit" name="delete" value="Add it" style="width:60px;height:40px;margin-left:162px;">
+                            </form><br>  
+                               <br><br>
                         </div>
                     </div>
 

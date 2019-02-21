@@ -1,0 +1,74 @@
+DROP DATABASE courier;
+CREATE DATABASE courier;
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS branch_manager; 
+DROP TABLE IF EXISTS cour_user; 
+DROP TABLE IF EXISTS offers;
+DROP TABLE IF EXISTS cour_tracking;
+DROP TABLE IF EXISTS courier_Detail;
+DROP TABLE IF EXISTS courierPayment;
+
+CREATE TABLE admin (
+	AId int NOT NULL,
+    AdminPassword varchar(20) NOT NULL,
+    AdminName varchar(255) NOT NULL,
+    AdminMail varchar(20),
+    AdminAddress varchar(50),
+	PRIMARY KEY (AId)
+);
+
+CREATE TABLE branch_manager(
+    BM_Name varchar(50) NOT NULL,
+    BM_Id int NOT NULL,
+    BM_Password varchar(20) NOT NULL,
+    BM_Email varchar(30),
+    BM_Address varchar(100),
+    PRIMARY KEY (BM_Id)
+    
+);
+
+CREATE TABLE cour_user(
+    Name varchar(255) NOT NULL,
+    userId int NOT NULL,
+    UserKey varchar(20),
+    PRIMARY KEY (userId)
+);
+
+CREATE TABLE offers(
+	offerId int NOT NULL,
+    StartingTime TIMESTAMP,
+    endingTime TIMESTAMP,
+    offerRate int,
+    offerDiscount int,
+    offerImage varchar(255),
+    offerDescription varchar(500),
+    PRIMARY KEY (offerId)
+);
+
+
+CREATE TABLE courier_Detail(
+    CId int NOT NULL,
+    user_Id int NOT NULL,
+    sourceBranchId int NOT NULL,
+    destinationBranchId int NOT NULL,
+    trackId int NOT NULL,
+    PRIMARY KEY (CId),
+    FOREIGN KEY (user_Id) REFERENCES cour_user (userId),
+    FOREIGN KEY (trackId) REFERENCES cour_tracking(trackId)
+);
+
+CREATE TABLE cour_tracking(
+    trackId int NOT NULL, 
+	CId int NOT NULL,
+    status varchar(500),
+    PRIMARY KEY (trackId),
+  	FOREIGN KEY (CId) REFERENCES courier_Detail (CId)
+);
+
+CREATE TABLE courierPayment(
+	PId int NOT NULL,
+    CId int NOT NULL,
+    bankDetail varchar(1000),
+    PRIMARY KEY (PId),
+    FOREIGN KEY (CId) REFERENCES courier_detail (CId)
+);

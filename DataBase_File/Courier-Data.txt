@@ -1,0 +1,50 @@
+insert into admin values(1,'0000','Rayya','rayya01@gmail.com','Dhaka');
+insert into admin values(2,'4987','Shariar','shariarshohag214@gmail.com','Dhaka');
+insert into admin values(3,'6278','Sumaiya','sumaiyasumu03@gmail.com','Dhaka');
+
+insert into subadmin values(1,'0000','sakib','sakib01@gmail.com','Dhaka');
+insert into subadmin values(2,'4987','nibir','nibir214@gmail.com','Bogura');
+insert into subadmin values(3,'6278','atik','atik03@gmail.com','Borishal');
+
+insert into branch_manager values('Mukta',101,'mukta','mukta@gmail.com','Dhaka');
+insert into branch_manager values('Kushum',102,'kushum','kushum@gmail.com','Dhaka');
+insert into branch_manager values('Ety',103,'ety','ety@gmail.com','Dhaka');
+
+
+
+insert into cour_user values('Irani',97,'irani');
+insert into cour_user values('Nafisa',98,'nafisa');
+insert into cour_user values('Neeha',99,'neeha');
+
+
+
+insert into offers values(1,'10:00:00','15:00:00',5,10,'image','Winter Offer');
+insert into offers values(2,'10:00:00','15:00:00',5,10,'image','Winter Offer');
+insert into offers values(3,'10:00:00','15:00:00',5,10,'image','Winter Offer');
+
+
+
+insert into courier_Detail values(1,1,1,1,1);
+insert into courier_Detail values(2,2,2,2,2);
+insert into courier_Detail values(3,3,3,3,3);
+
+
+
+insert into cour_tracking values(1,1,'ok');
+insert into cour_tracking values(2,2,'ok');
+insert into cour_tracking values(3,3,'ok');
+
+
+insert into courierPayment values(1,1,'bankdetail');
+insert into courierPayment values(2,2,'bankdetail');
+insert into courierPayment values(3,3,'bankdetail');
+
+
+
+
+
+
+
+
+
+

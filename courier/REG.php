@@ -57,36 +57,35 @@
   </style>
 </head>      
 <body>
- <nav class="navbar navbar-inverse">
+         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="collapse navbar-collapse" style="margin-left: 60px;">
               <ul class="nav navbar-nav">
-                  <li ><a  href="http://localhost:1234/Courier/courier/logo.php" target="_self">Logo</a></li>
-                  <li ><a href="http://localhost:1234/Courier/courier/Home.php"><i class="fa fa-home"> </i>Home</a></li>
-                <li><a href="http://localhost:1234/Courier/courier/contuctus.php">Contact us</a></li>
+                  <li ><a  href="../courier/Logo.php" target="_self">Logo</a></li>
+                  <li ><a href="../courier/Home.php"><i class="fa fa-home"> </i>Home</a></li>
+                  <li><a href="../courier/contuctus.php">Contact us</a></li>
                 <li>
-                       <div class="w3-container" style="margin-top: 7px;box-sizing: content-box:Light Gray;">
+                       <div class="w3-container" style="margin-top: 7px; content-box:Light Gray;">
                           <div class="w3-dropdown-hover">
                             <button class="w3-button w3-black" id="com">Company Profile</button>
                             <div class="w3-dropdown-content w3-bar-block w3-border">
-                              <a href="http://localhost:1234/Courier/courier/myprofile.php" class="w3-bar-item w3-button">My Profile</a>
-                              <a href="http://localhost:1234/Courier/courier/termofservices.php" class="w3-bar-item w3-button">Term of Service</a>
+                                <a href="../courier/Myprofile.php" class="w3-bar-item w3-button">My Profile</a>
+                                <a href="../courier/Termofservices.php" class="w3-bar-item w3-button">Term of Service</a>
                             </div>
                           </div>
                         </div>
                 </li>
-                <li><a href="http://localhost:1234/Courier/courier/othernetwork.php">other Network</a></li>
-                <li><a href="http://localhost:1234/Courier/courier/CheckShipping.php">Check Shipping</a></li>
-                <li><a href="http://localhost:1234/Courier/courier/DeliveryStatus.php">Delivary Status</a></li>
-                <li><a href="http://localhost:1234/Courier/courier/Reg.php" target="_self">Register Here</a></li>
+                <li><a href="../courier/OtherNetwork.php">other Network</a></li>
+                <li><a href="../courier/CheckShipping.php">Check Shipping</a></li>
+                <li><a href="../courier/DeliveryStatus.php">Delivery Status</a></li>
+                <li><a href="../courier/REG.php" target="_self">Register Here</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://localhost:1234/Courier/courier/login.php"><span class="glyphicon glyphicon-log-in "></span>Member Login</a></li>
+                  <li><a href="../courier/login.php"><span class="glyphicon glyphicon-log-in "></span>Member Login</a></li>
               </ul>
             </div>
           </div>
         </nav>
-
 
  <div class=" container" style="margin-top: 100px;">
         <div class=" row">
